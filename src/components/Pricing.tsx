@@ -1,0 +1,91 @@
+import React from 'react';
+
+interface PricingTier {
+  id: number;
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+}
+
+const pricingTiers: PricingTier[] = [
+  {
+    id: 1,
+    name: 'Basic',
+    price: '$19/month',
+    description: 'For individuals or small teams',
+    features: ['1 User', 'Basic Support', '5 GB Storage'],
+    highlighted: false,
+  },
+  {
+    id: 2,
+    name: 'Pro',
+    price: '$49/month',
+    description: 'For growing businesses',
+    features: ['5 Users', 'Priority Support', '50 GB Storage'],
+    highlighted: true,
+  },
+  {
+    id: 3,
+    name: 'Enterprise',
+    price: '$99/month',
+    description: 'For large organizations',
+    features: ['Unlimited Users', '24/7 Support', '200 GB Storage'],
+    highlighted: false,
+  },
+];
+
+const Pricing: React.FC = () => {
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">Choose Your Plan</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {pricingTiers.map((tier) => (
+            <div
+              key={tier.id}
+              className={`relative bg-white p-8 rounded-lg shadow-lg transition-transform transform ${
+                tier.highlighted ? 'scale-105 shadow-2xl' : ''
+              }`}
+            >
+              {tier.highlighted && (
+                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-xs py-1 px-3 rounded-bl-lg">
+                  Best Value
+                </div>
+              )}
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">{tier.name}</h3>
+              <p className="text-xl font-bold text-gray-900 mb-4">{tier.price}</p>
+              <p className="text-gray-600 mb-6">{tier.description}</p>
+              <ul className="space-y-3 mb-6">
+                {tier.features.map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 text-indigo-600 mr-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2a10 10 0 110-20 10 10 0 010 20z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                Get Started
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Pricing;
