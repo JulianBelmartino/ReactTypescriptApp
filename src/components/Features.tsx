@@ -1,34 +1,5 @@
 import React from 'react';
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  highlighted?: boolean;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'Description of Product 1',
-    image: 'https://via.placeholder.com/400',
-    highlighted: true,
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'Description of Product 2',
-    image: 'https://via.placeholder.com/400',
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    description: 'Description of Product 3',
-    image: 'https://via.placeholder.com/400',
-  },
-];
+import { products } from '../utils/products';
 
 const Features: React.FC = () => {
   return (

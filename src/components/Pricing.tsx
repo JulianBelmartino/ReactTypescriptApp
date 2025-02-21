@@ -60,19 +60,8 @@ const Pricing: React.FC = () => {
               <ul className="space-y-3 mb-6">
                 {tier.features.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 text-indigo-600 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2a10 10 0 110-20 10 10 0 010 20z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    {/* Circle replacement for the SVG */}
+                    <span className="w-3 h-3 bg-indigo-600 rounded-full mr-2"></span>
                     {feature}
                   </li>
                 ))}

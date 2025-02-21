@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Features from "./components/Features";
-import Pricing from "./components/Pricing"
+import Pricing from "./components/Pricing";
 
 const App: React.FC = () => {
   return (
@@ -17,75 +17,65 @@ const App: React.FC = () => {
           className="container mx-auto text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
         >
-          <h1 className="text-3xl font-bold">Your App Header</h1>
-          <nav className="mt-4">
+         <nav className="mt-4">
             <ul className="flex space-x-4">
-              <li><a href="#home" className="hover:text-blue-200">Home</a></li>
-              <li><a href="#about" className="hover:text-blue-200">About</a></li>
-              <li><a href="#services" className="hover:text-blue-200">Services</a></li>
+              <li><a href="#featured" className="hover:text-blue-200">Featured</a></li>
+              <li><a href="#pricing" className="hover:text-blue-200">Pricing</a></li>
+              <li><a href="#testimonials" className="hover:text-blue-200">Testimonials</a></li>
               <li><a href="#contact" className="hover:text-blue-200">Contact</a></li>
             </ul>
           </nav>
         </motion.div>
       </header>
-          <Hero />
+      <Hero />
 
       {/* Main Content Section */}
       <main className="container mx-auto px-4 py-8">
-        <section id="home" className="py-16">
-          <motion.h2
-            className="text-2xl font-semibold mb-4"
-            initial={{ x: -200 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Welcome to Our Homepage
-          </motion.h2>
-          <p>This is the home section. Add your homepage content here.</p>
-        </section>
+        {/* Featured Section with Animation */}
+        <motion.section
+          id="featured"
+          initial={{ opacity: 0, y: 50 }} // Initial state
+          animate={{ opacity: 1, y: 0 }}   // Animated state when in view
+          transition={{ duration: 0.8 }}    // Duration of the transition
+        >
+          <Features />
+        </motion.section>
 
-        <section id="about" className="py-16 bg-gray-200">
-          <motion.h2
-            className="text-2xl font-semibold mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            About Us
-          </motion.h2>
-          <p>Here's some information about your company or app.</p>
-        </section>
-        <Features />
-        <section id="services" className="py-16">
-          <motion.h2
-            className="text-2xl font-semibold mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Services
-          </motion.h2>
-        </section>
-        <Testimonials />
-        <Pricing />
-        <section id="contact" className="py-16 bg-gray-200">
-          <motion.h2
-            className="text-2xl font-semibold mb-4"
-            initial={{ x: 200 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Contact Us
-          </motion.h2>
-          <p>Get in touch with us through the contact form or email.</p>
+        {/* Testimonials Section with Animation */}
+        <motion.section
+          id="testimonials"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Testimonials />
+        </motion.section>
+
+        {/* Pricing Section with Animation */}
+        <motion.section
+          id="pricing"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Pricing />
+        </motion.section>
+
+        {/* Contact Section with Animation */}
+        <motion.section
+          id="contact"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <Contact />
-        </section>
+        </motion.section>
       </main>
 
       {/* Footer Section */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
