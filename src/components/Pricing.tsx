@@ -45,12 +45,12 @@ const Pricing: React.FC = () => {
           {pricingTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`relative bg-white p-8 rounded-lg shadow-lg transition-transform transform ${
+              className={`relative bg-white p-8 rounded-sm shadow-lg transition-transform transform ${
                 tier.highlighted ? 'scale-105 shadow-2xl' : ''
               }`}
             >
               {tier.highlighted && (
-                <div className="absolute top-0 right-0 bg-green-600 text-white text-xs py-1 px-3 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-green-600 text-white text-xs py-1 px-3 rounded-sm">
                   Best Value
                 </div>
               )}
@@ -66,9 +66,11 @@ const Pricing: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full py-3 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                Get Started
-              </button>
+              <a href="#contact">
+                <button className="w-full py-3 px-4 bg-transparent text-green-700 border-2 border-green-700 hover:bg-green-700 hover:text-white hover:shadow-md transition-all ease-in-out duration-300">
+                  Get Started
+                </button>
+              </a>
             </div>
           ))}
         </div>

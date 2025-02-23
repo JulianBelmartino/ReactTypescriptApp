@@ -13,20 +13,20 @@ export interface Product {
   export const products: Product[] = [
     {
       id: 1,
-      name: 'Product 1',
+      name: 'Product A',
       description: 'Incredible Bonsai',
       image: product1,
     },
     {
       id: 2,
-      name: 'Product 2',
+      name: 'Product B',
       description: 'Amazing Bonsai',
       image: product2,
       highlighted: true,
     },
     {
       id: 3,
-      name: 'Product 3',
+      name: 'Product C',
       description: 'Outstanding Bonsai',
       image: product3,
     },

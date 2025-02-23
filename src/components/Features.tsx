@@ -8,9 +8,10 @@ const Features: React.FC = () => {
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">Our Featured Products</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div
+            <a
               key={product.id}
-              className={`relative bg-white p-6 rounded-lg shadow-lg transition-transform transform ${
+              href="#pricing" // This makes the product container a clickable link
+              className={`relative bg-white p-6 rounded-sm shadow-lg transition-transform transform cursor-pointer group ${
                 product.highlighted ? 'scale-105 shadow-2xl' : ''
               }`}
             >
@@ -22,11 +23,11 @@ const Features: React.FC = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-64 object-cover rounded-lg mb-6"
+                className="w-full h-64 object-cover rounded-sm mb-6"
               />
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">{product.name}</h3>
-              <p className="text-gray-600">{product.description}</p>
-            </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-green-700 transition-colors ease-in-out duration-300">{product.name}</h3>
+              <p className="text-gray-600 group-hover:text-green-700 transition-colors ease-in-out duration-300">{product.description}</p>
+            </a>
           ))}
         </div>
       </div>
