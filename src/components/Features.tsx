@@ -15,7 +15,7 @@ const Features: React.FC = () => {
               }`}
             >
               {product.highlighted && (
-                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-xs py-1 px-3 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-green-600 text-white text-xs py-1 px-3 rounded-bl-lg">
                   Featured
                 </div>
               )}

@@ -50,7 +50,7 @@ const Pricing: React.FC = () => {
               }`}
             >
               {tier.highlighted && (
-                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-xs py-1 px-3 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-green-600 text-white text-xs py-1 px-3 rounded-bl-lg">
                   Best Value
                 </div>
               )}
@@ -61,12 +61,12 @@ const Pricing: React.FC = () => {
                 {tier.features.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-700">
                     {/* Circle replacement for the SVG */}
-                    <span className="w-3 h-3 bg-indigo-600 rounded-full mr-2"></span>
+                    <span className="w-3 h-3 bg-green-600 rounded-full mr-2"></span>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <button className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+              <button className="w-full py-3 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
                 Get Started
               </button>
             </div>

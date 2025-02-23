@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Modal from './Modal'; // Import the modal component
 
 interface FormData {
   name: string;
@@ -12,17 +13,31 @@ const Contact: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // Used to reset the form fields
   } = useForm<FormData>();
 
+  const [isModalOpen, setModalOpen] = useState(false); // Modal state for visibility
+
   const onSubmit = (data: FormData) => {
-    // Handle form submission (e.g., send data to an API or server)
     console.log('Form Submitted:', data);
+
+    // Show the modal after submission
+    setModalOpen(true);
+
+    // Reset the form fields
+    reset();
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
     <section className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Contact Us</h2>
+        
+        {/* Form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg"
@@ -86,12 +101,15 @@ const Contact: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             Submit
           </button>
         </form>
       </div>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 };

@@ -14,20 +14,20 @@ export interface Product {
     {
       id: 1,
       name: 'Product 1',
-      description: 'Description of Product 1',
+      description: 'Incredible Bonsai',
       image: product1,
-      highlighted: true,
     },
     {
       id: 2,
       name: 'Product 2',
-      description: 'Description of Product 2',
+      description: 'Amazing Bonsai',
       image: product2,
+      highlighted: true,
     },
     {
       id: 3,
       name: 'Product 3',
-      description: 'Description of Product 3',
+      description: 'Outstanding Bonsai',
       image: product3,
     },
   ];
