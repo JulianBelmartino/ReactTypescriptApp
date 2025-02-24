@@ -1,4 +1,5 @@
 import React from 'react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -12,23 +13,18 @@ const Footer: React.FC = () => {
           <div className="mt-4 md:mt-0">
             <ul className="flex justify-center md:justify-end space-x-6">
               <li>
-                <a href="#featured" className="text-sm hover:text-gray-400">
-                  Features
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                  <Facebook className="w-5 h-5" />
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-sm hover:text-gray-400">
-                  Testimonials
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                  <Twitter className="w-5 h-5" />
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="text-sm hover:text-gray-400">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-sm hover:text-gray-400">
-                  Contact
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                  <Instagram className="w-5 h-5" />
                 </a>
               </li>
             </ul>
