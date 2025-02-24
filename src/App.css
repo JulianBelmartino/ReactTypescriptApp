@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Roboto', sans-serif; 
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 section {
   scroll-margin-top: 50px; 

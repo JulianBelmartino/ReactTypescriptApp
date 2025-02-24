@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logo from '../assets/images/logo.png';
 
 interface ModalProps {
   isOpen: boolean;
@@ -26,6 +27,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         exit={{ scale: 0.8 }}
         transition={{ duration: 0.3 }}
       >
+        <img src={logo} alt="Logo" className="w-10 h-10" />
         <div className="text-xl text-green-700 font-semibold mb-4 text-center">Thank You</div>
         <div className="mb-6 text-center">
           <p>Your message has been successfully submitted.</p>
