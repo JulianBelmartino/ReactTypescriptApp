@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white p-4 shadow-md fixed w-full top-0 z-50">
+    <header className="bg-white p-4 shadow-md fixed w-full top-0 z-50 ">
       <motion.div
         className="container mx-auto text-green max-w-full px-4 sm:px-6 md:px-8" // Adjust padding for small screens
         initial={{ opacity: 0 }}
@@ -22,9 +22,9 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Links and Hamburger Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ">
             {/* Desktop Menu */}
-            <ul className="hidden md:flex space-x-4">
+            <ul className="hidden md:flex space-x-4 ">
               <li>
                 <a href="#featured" className="hover:text-green-600">Featured</a>
               </li>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden flex flex-col space-y-4 mt-4 items-center">
+          <div className="md:hidden flex flex-col space-y-4 mt-4 items-center dark:bg-grey-700 ">
             <a href="#featured" className="hover:text-green-600">Featured</a>
             <a href="#testimonials" className="hover:text-green-600">Testimonials</a>
             <a href="#pricing" className="hover:text-green-600">Pricing</a>
