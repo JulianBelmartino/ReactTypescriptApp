@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import "./App.css";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
@@ -9,8 +9,11 @@ import Features from "./components/Features";
 import Pricing from "./components/Pricing";
 import Navbar from "./components/Navbar";
 
+
 const App: React.FC = () => {
-  const { scrollY } = useScroll(); // Track the vertical scroll position
+
+
+ 
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
